@@ -207,6 +207,9 @@ class Item {
 		if ($this->description !== NULL) {
 			$xml->addCdataChild('description', $this->description);
 		}
+		if ($this->content !== NULL) {
+			$xml->addCdataChild('encoded', $this->content, 'http://purl.org/rss/1.0/modules/content/');
+		}
 		foreach ($this->categories as $category) {
 			$xml->addCdataChild('category', $category);
 		}
