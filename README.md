@@ -32,6 +32,6 @@ $item
 $channel->addItem($item);
 $feed->addChannel($channel);
 
-echo $feed;
+echo $feed->render();
 
 ```
