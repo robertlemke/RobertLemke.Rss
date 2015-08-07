@@ -1,6 +1,10 @@
 <?php
 namespace RobertLemke\Rss;
 
+/*                                                                        *
+ * This script belongs to the TYPO3 Flow package "RobertLemke.Rss".       *
+ *                                                                        */
+
 /**
  * An item of an RSS channel
  */
@@ -53,6 +57,7 @@ class Item {
 
 	/**
 	 * @param array $categories
+	 * @return void
 	 */
 	public function setCategories($categories) {
 		$this->categories = $categories;
@@ -67,6 +72,7 @@ class Item {
 
 	/**
 	 * @param string $commentsLink
+	 * @return void
 	 */
 	public function setCommentsLink($commentsLink) {
 		$this->commentsLink = $commentsLink;
@@ -81,6 +87,7 @@ class Item {
 
 	/**
 	 * @param string $content
+	 * @return void
 	 */
 	public function setContent($content) {
 		$this->content = $content;
@@ -95,6 +102,7 @@ class Item {
 
 	/**
 	 * @param string $creator
+	 * @return void
 	 */
 	public function setCreator($creator) {
 		$this->creator = $creator;
@@ -109,6 +117,7 @@ class Item {
 
 	/**
 	 * @param string $description
+	 * @return void
 	 */
 	public function setDescription($description) {
 		$this->description = $description;
@@ -123,6 +132,7 @@ class Item {
 
 	/**
 	 * @param string $guid
+	 * @return void
 	 */
 	public function setGuid($guid) {
 		$this->guid = $guid;
@@ -137,6 +147,7 @@ class Item {
 
 	/**
 	 * @param string $itemLink
+	 * @return void
 	 */
 	public function setItemLink($itemLink) {
 		$this->itemLink = $itemLink;
@@ -151,6 +162,7 @@ class Item {
 
 	/**
 	 * @param \DateTime $publicationDate
+	 * @return void
 	 */
 	public function setPublicationDate(\DateTime $publicationDate = NULL) {
 		$this->publicationDate = $publicationDate;
@@ -165,6 +177,7 @@ class Item {
 
 	/**
 	 * @param string $title
+	 * @return void
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
@@ -206,6 +219,9 @@ class Item {
 		}
 		if ($this->description !== NULL) {
 			$xml->addCdataChild('description', $this->description);
+		}
+		if ($this->content !== NULL) {
+			$xml->addCdataChild('encoded', $this->content, 'http://purl.org/rss/1.0/modules/content/');
 		}
 		foreach ($this->categories as $category) {
 			$xml->addCdataChild('category', $category);

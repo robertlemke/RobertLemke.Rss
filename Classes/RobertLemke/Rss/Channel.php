@@ -1,6 +1,10 @@
 <?php
 namespace RobertLemke\Rss;
 
+/*                                                                        *
+ * This script belongs to the TYPO3 Flow package "RobertLemke.Rss".       *
+ *                                                                        */
+
 /**
  * An RSS Channel
  */
@@ -43,6 +47,7 @@ class Channel {
 
 	/**
 	 * @param string $description
+	 * @return void
 	 */
 	public function setDescription($description) {
 		$this->description = $description;
@@ -50,6 +55,7 @@ class Channel {
 
 	/**
 	 * @param string $title
+	 * @return void
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
@@ -57,6 +63,7 @@ class Channel {
 
 	/**
 	 * @param string $feedUri
+	 * @return void
 	 */
 	public function setFeedUri($feedUri) {
 		$this->feedUri = $feedUri;
@@ -64,6 +71,7 @@ class Channel {
 
 	/**
 	 * @param string $websiteUri
+	 * @return void
 	 */
 	public function setWebsiteUri($websiteUri) {
 		$this->websiteUri = $websiteUri;
@@ -71,6 +79,7 @@ class Channel {
 
 	/**
 	 * @param string $language
+	 * @return void
 	 */
 	public function setLanguage($language) {
 		$this->language = $language;

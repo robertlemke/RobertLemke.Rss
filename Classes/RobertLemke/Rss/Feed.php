@@ -1,6 +1,10 @@
 <?php
 namespace RobertLemke\Rss;
 
+/*                                                                        *
+ * This script belongs to the TYPO3 Flow package "RobertLemke.Rss".       *
+ *                                                                        */
+
 /**
  * An RSS Feed
  */
@@ -48,7 +52,8 @@ class Feed {
 
 		$dom = new \DOMDocument('1.0', 'UTF-8');
 		$dom->appendChild($dom->importNode(dom_import_simplexml($xml), TRUE));
-		$dom->formatOutput = true;
+		$dom->formatOutput = TRUE;
+
 		return $dom->saveXML();
 	}
 }
