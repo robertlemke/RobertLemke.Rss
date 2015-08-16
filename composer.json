@@ -1,19 +1,26 @@
 {
-	"name": "robertlemke/rss",
-	"type": "typo3-flow-plugin",
-	"description": "A multi-purpose RSS library",
-	"license": ["MIT"],
-	"authors": [
-		{
-			"name": "Robert Lemke",
-			"email": "rl@robertlemke.com",
-			"homepage": "http://robertlemke.com",
-			"role": "Developer"
-		}
-	],
-	"autoload": {
-		"psr-0": {
-			"RobertLemke\\Rss": "Classes"
-		}
-	}
+    "name": "robertlemke/rss",
+    "type": "typo3-flow-plugin",
+    "description": "A multi-purpose RSS library",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Robert Lemke",
+            "email": "rl@robertlemke.com",
+            "homepage": "http://robertlemke.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "RobertLemke\\Rss": "Classes"
+        }
+    },
+    "extra": {
+        "applied-flow-migrations": [
+            "TYPO3.FLOW3-201201261636"
+        ]
+    }
 }
