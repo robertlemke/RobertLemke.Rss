@@ -2,7 +2,7 @@
 namespace RobertLemke\Rss;
 
 /*                                                                        *
- * This script belongs to the TYPO3 Flow package "RobertLemke.Rss".       *
+ * This script belongs to the Flow package "RobertLemke.Rss".             *
  *                                                                        */
 
 /**
