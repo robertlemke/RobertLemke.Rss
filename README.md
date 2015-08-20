@@ -2,7 +2,7 @@ RSS / Atom Feed Generator
 =========================
 
 This is yet another RSS / Atom feed generator for PHP 5.3 and later. It works great
-in combination with TYPO3 Flow but should also be fine as a standalone library.
+in combination with Flow but should also be fine as a standalone library.
 
 This package is composer enabled.
 
