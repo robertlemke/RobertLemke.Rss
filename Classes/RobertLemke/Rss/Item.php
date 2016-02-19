@@ -63,6 +63,8 @@ class Item
     protected $categories = array();
 
     /**
+     * Can be an array of either strings or arrays (with indexes "category" and "domain").
+     *
      * @param array $categories
      * @return void
      */
@@ -253,7 +255,14 @@ class Item
             $xml->addCdataChild('encoded', $this->content, 'http://purl.org/rss/1.0/modules/content/');
         }
         foreach ($this->categories as $category) {
-            $xml->addCdataChild('category', $category);
+            if (is_string($category)) {
+                $xml->addCdataChild('category', $category);
+            } else {
+                $categoryElement = $xml->addCdataChild('category', $category['category']);
+                if ($category['domain']) {
+                    $categoryElement->addAttribute('domain', $category['domain']);
+                }
+            }
         }
 
         return $xml;
