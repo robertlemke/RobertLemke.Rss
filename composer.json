@@ -2,9 +2,7 @@
     "name": "robertlemke/rss",
     "type": "typo3-flow-plugin",
     "description": "A multi-purpose RSS library",
-    "license": [
-        "MIT"
-    ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Robert Lemke",
@@ -13,6 +11,9 @@
             "role": "Developer"
         }
     ],
+    "require": {
+        "php": "~5.5 || ~7.0"
+    },
     "autoload": {
         "psr-0": {
             "RobertLemke\\Rss": "Classes"
