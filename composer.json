@@ -15,7 +15,7 @@
         "php": "~5.5 || ~7.0"
     },
     "conflict": {
-        "neos/flow": ">=4"
+        "neos/flow": "<4"
     },
     "autoload": {
         "psr-4": {
