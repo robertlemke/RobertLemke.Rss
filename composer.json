@@ -23,6 +23,9 @@
         }
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        },
         "applied-flow-migrations": [
             "TYPO3.FLOW3-201201261636",
             "TYPO3.Fluid-201205031303",
