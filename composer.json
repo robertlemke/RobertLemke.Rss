@@ -1,6 +1,6 @@
 {
     "name": "robertlemke/rss",
-    "type": "typo3-flow-plugin",
+    "type": "neos-package",
     "description": "A multi-purpose RSS library",
     "license": "MIT",
     "authors": [
@@ -14,9 +14,12 @@
     "require": {
         "php": "~5.5 || ~7.0"
     },
+    "conflict": {
+        "neos/flow": ">=4"
+    },
     "autoload": {
-        "psr-0": {
-            "RobertLemke\\Rss": "Classes"
+        "psr-4": {
+            "RobertLemke\\Rss\\": "Classes"
         }
     },
     "extra": {
