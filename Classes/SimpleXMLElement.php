@@ -12,7 +12,7 @@ namespace RobertLemke\Rss;
  */
 
 /**
- * @TYPO3\Flow\Annotations\Proxy(false)
+ * @Neos\Flow\Annotations\Proxy(false)
  */
 class SimpleXMLElement extends \SimpleXMLElement
 {
