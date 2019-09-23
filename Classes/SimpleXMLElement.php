@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace RobertLemke\Rss;
 
 /*
@@ -16,14 +18,13 @@ namespace RobertLemke\Rss;
  */
 class SimpleXMLElement extends \SimpleXMLElement
 {
-
     /**
      * Adds a new child node - and replaces "&" by "&amp;" on the way ...
      *
      * @param string $name Name of the tag
      * @param string $value The tag value, if any
      * @param string $namespace The tag namespace, if any
-     * @return SimpleXMLElement
+     * @return \SimpleXMLElement
      */
     public function addChild($name, $value = null, $namespace = null)
     {
@@ -49,9 +50,9 @@ class SimpleXMLElement extends \SimpleXMLElement
      * @param string $name tag name
      * @param string $value tag value
      * @param string $namespace The tag namespace, if any
-     * @return SimpleXMLElement
+     * @return \SimpleXMLElement
      */
-    public function addCdataChild($name, $value, $namespace = null)
+    public function addCdataChild(string $name, string $value, string $namespace = null): SimpleXMLElement
     {
         $child = $this->addChild($name, null, $namespace);
         $child->setChildCdataValue($value);
@@ -64,7 +65,7 @@ class SimpleXMLElement extends \SimpleXMLElement
      * @param string $value The value to be enclosed in CDATA
      * @return void
      */
-    private function setChildCdataValue($value)
+    private function setChildCdataValue(string $value): void
     {
         $domNode = dom_import_simplexml($this);
         $domNode->appendChild($domNode->ownerDocument->createCDATASection($value));

@@ -12,7 +12,9 @@
         }
     ],
     "require": {
-        "php": "~5.5 || ~7.0"
+        "ext-simplexml": "*",
+        "ext-dom": "*",
+        "php": "~7.0"
     },
     "conflict": {
         "neos/flow": "<4"

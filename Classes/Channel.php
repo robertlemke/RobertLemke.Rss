@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace RobertLemke\Rss;
 
 /*
@@ -16,7 +18,6 @@ namespace RobertLemke\Rss;
  */
 class Channel
 {
-
     /**
      * @var string
      */
@@ -40,78 +41,80 @@ class Channel
     /**
      * @var string
      */
-    protected $imageUri;
-
-    /**
-     * @var string
-     */
     protected $language;
 
     /**
      * @var array
      */
-    protected $items = array();
+    protected $items = [];
 
     /**
      * @param string $description
-     * @return void
+     * @return Channel
      */
-    public function setDescription($description)
+    public function setDescription(string $description): Channel
     {
         $this->description = $description;
+        return $this;
     }
 
     /**
      * @param string $title
-     * @return void
+     * @return Channel
      */
-    public function setTitle($title)
+    public function setTitle(string $title): Channel
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
      * @param string $feedUri
-     * @return void
+     * @return Channel
      */
-    public function setFeedUri($feedUri)
+    public function setFeedUri(string $feedUri): Channel
     {
         $this->feedUri = $feedUri;
+        return $this;
     }
 
     /**
      * @param string $websiteUri
-     * @return void
+     * @return Channel
      */
-    public function setWebsiteUri($websiteUri)
+    public function setWebsiteUri(string $websiteUri): Channel
     {
         $this->websiteUri = $websiteUri;
+        return $this;
     }
 
     /**
      * @param string $language
-     * @return void
+     * @return Channel
      */
-    public function setLanguage($language)
+    public function setLanguage(string $language): Channel
     {
         $this->language = $language;
+        return $this;
     }
 
     /**
      * Adds a new item to this channel
      *
      * @param Item $item An item
-     * @return void
+     * @return Channel
      */
-    public function addItem(Item $item)
+    public function addItem(Item $item): Channel
     {
         $this->items[] = $item;
+        return $this;
     }
 
     /**
      * @return \SimpleXMLElement
+     * @throws \Exception
      */
-    public function asXML()
+    public function asXML(): \SimpleXMLElement
     {
         $date = new \DateTime('now', new \DateTimeZone('GMT'));
         $nowFormatted = $date->format('D, d M Y H:i:s') . ' GMT';
