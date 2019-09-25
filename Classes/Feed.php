@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace RobertLemke\Rss;
 
 /*
@@ -16,11 +18,10 @@ namespace RobertLemke\Rss;
  */
 class Feed
 {
-
     /**
      * @var array<Channel>
      */
-    protected $channels = array();
+    protected $channels = [];
 
     /**
      * Adds a new channel to this feed
@@ -28,7 +29,7 @@ class Feed
      * @param Channel $channel
      * @return Feed
      */
-    public function addChannel(Channel $channel)
+    public function addChannel(Channel $channel): Feed
     {
         $this->channels[] = $channel;
 
@@ -40,7 +41,7 @@ class Feed
      *
      * @return string
      */
-    public function render()
+    public function render(): string
     {
         $xml = new SimpleXMLElement(
             '<?xml version="1.0" encoding="UTF-8" ?>

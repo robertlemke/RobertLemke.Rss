@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace RobertLemke\Rss;
 
 /*
@@ -16,7 +18,6 @@ namespace RobertLemke\Rss;
  */
 class Item
 {
-
     /**
      * @var string
      */
@@ -60,159 +61,168 @@ class Item
     /**
      * @var array<string>
      */
-    protected $categories = array();
+    protected $categories = [];
 
     /**
      * Can be an array of either strings or arrays (with indexes "category" and "domain").
      *
      * @param array $categories
-     * @return void
+     * @return Item
      */
-    public function setCategories($categories)
+    public function setCategories(array $categories): Item
     {
         $this->categories = $categories;
+        return $this;
     }
 
     /**
      * @return array
      */
-    public function getCategories()
+    public function getCategories(): array
     {
         return $this->categories;
     }
 
     /**
      * @param string $commentsLink
-     * @return void
+     * @return Item
      */
-    public function setCommentsLink($commentsLink)
+    public function setCommentsLink(string $commentsLink): Item
     {
         $this->commentsLink = $commentsLink;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getCommentsLink()
+    public function getCommentsLink(): string
     {
         return $this->commentsLink;
     }
 
     /**
      * @param string $content
-     * @return void
+     * @return Item
      */
-    public function setContent($content)
+    public function setContent(string $content): Item
     {
         $this->content = $content;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getContent()
+    public function getContent(): string
     {
         return $this->content;
     }
 
     /**
      * @param string $creator
-     * @return void
+     * @return Item
      */
-    public function setCreator($creator)
+    public function setCreator(string $creator): Item
     {
         $this->creator = $creator;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getCreator()
+    public function getCreator(): string
     {
         return $this->creator;
     }
 
     /**
      * @param string $description
-     * @return void
+     * @return Item
      */
-    public function setDescription($description)
+    public function setDescription(string $description): Item
     {
         $this->description = $description;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
     /**
      * @param string $guid
-     * @return void
+     * @return Item
      */
-    public function setGuid($guid)
+    public function setGuid(string $guid): Item
     {
         $this->guid = $guid;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getGuid()
+    public function getGuid(): string
     {
         return $this->guid;
     }
 
     /**
      * @param string $itemLink
-     * @return void
+     * @return Item
      */
-    public function setItemLink($itemLink)
+    public function setItemLink(string $itemLink): Item
     {
         $this->itemLink = $itemLink;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getItemLink()
+    public function getItemLink(): string
     {
         return $this->itemLink;
     }
 
     /**
      * @param \DateTime $publicationDate
-     * @return void
+     * @return Item
      */
-    public function setPublicationDate(\DateTime $publicationDate = null)
+    public function setPublicationDate(\DateTime $publicationDate = null): Item
     {
         $this->publicationDate = $publicationDate;
+        return $this;
     }
 
     /**
      * @return \DateTime
      */
-    public function getPublicationDate()
+    public function getPublicationDate(): \DateTime
     {
         return $this->publicationDate;
     }
 
     /**
      * @param string $title
-     * @return void
+     * @return Item
      */
-    public function setTitle($title)
+    public function setTitle(string $title): Item
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -220,7 +230,7 @@ class Item
     /**
      * @return \SimpleXMLElement
      */
-    public function asXml()
+    public function asXml(): \SimpleXMLElement
     {
         $xml = new SimpleXMLElement(
             '<?xml version="1.0" encoding="UTF-8" ?>
@@ -267,5 +277,4 @@ class Item
 
         return $xml;
     }
-
 }
