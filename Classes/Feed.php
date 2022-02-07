@@ -40,6 +40,7 @@ class Feed
      * Renders the full XML output for this RSS feed
      *
      * @return string
+     * @throws \Exception
      */
     public function render(): string
     {

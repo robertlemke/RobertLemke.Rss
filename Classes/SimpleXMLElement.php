@@ -49,7 +49,7 @@ class SimpleXMLElement extends \SimpleXMLElement
      *
      * @param string $name tag name
      * @param string $value tag value
-     * @param string $namespace The tag namespace, if any
+     * @param ?string $namespace The tag namespace, if any
      * @return \SimpleXMLElement
      */
     public function addCdataChild(string $name, string $value, string $namespace = null): SimpleXMLElement
