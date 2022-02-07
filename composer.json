@@ -14,7 +14,7 @@
     "require": {
         "ext-simplexml": "*",
         "ext-dom": "*",
-        "php": "~7.0"
+        "php": "^7.0 || ^8.0"
     },
     "conflict": {
         "neos/flow": "<4"

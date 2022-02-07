@@ -229,6 +229,7 @@ class Item
 
     /**
      * @return \SimpleXMLElement
+     * @throws \Exception
      */
     public function asXml(): \SimpleXMLElement
     {
